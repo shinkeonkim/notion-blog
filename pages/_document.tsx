@@ -5,7 +5,7 @@ export default class CustomDocument extends Document {
 
   render() {
     return (
-      <Html lang='en'>
+      <Html lang='ko'>
         <Head>
           <meta 
             httpEquiv="Content-Security-Policy" 
