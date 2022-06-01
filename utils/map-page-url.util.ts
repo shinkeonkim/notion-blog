@@ -5,17 +5,14 @@ import { notionPageID, subDomain } from './config.util';
 
 export function getCanonicalPageId(
   pageId: string,
-  recordMap: ExtendedRecordMap,
-  { uuid = true }: { uuid?: boolean } = {}
+  recordMap: ExtendedRecordMap
 ): string | null {
   const cleanPageId = parsePageId(pageId, { uuid: false })
   if (!cleanPageId) {
     return null
   }
 
-  return getCanonicalPageIdImpl(pageId, recordMap, {
-    uuid
-  })
+  return getCanonicalPageIdImpl(pageId, recordMap, { uuid: false });
 }
 
 export const mapPageUrl =
