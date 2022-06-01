@@ -3,16 +3,30 @@ import { uuidToId, parsePageId, getCanonicalPageId as getCanonicalPageIdImpl } f
 import { ExtendedRecordMap } from 'notion-types'
 import { notionPageID, subDomain } from './config.util';
 
-export function getCanonicalPageId(
+export const getCanonicalPageId = (
   pageId: string,
-  recordMap: ExtendedRecordMap
-): string | null {
+  recordMap: ExtendedRecordMap,
+  { uuid = true }: { uuid?: boolean } = {}
+) => {
   const cleanPageId = parsePageId(pageId, { uuid: false })
   if (!cleanPageId) {
     return null
   }
 
-  return getCanonicalPageIdImpl(pageId, recordMap, { uuid: false });
+  return getCanonicalPageIdImpl(pageId, recordMap, {
+    uuid
+  })
+}
+
+const normalizeTitle = (title: string | null): string => {
+  return (
+    (title || '')
+      .replace(/ /g, '-')
+      .replace(/--/g, '-')
+      .replace(/-$/, '')
+      .replace(/^-/, '')
+      .trim()
+  )
 }
 
 export const mapPageUrl =
@@ -24,7 +38,7 @@ export const mapPageUrl =
       return createUrl(subDomain, searchParams)
     } else {
       return createUrl(
-        `${subDomain}${getCanonicalPageId(pageUuid, recordMap)}`,
+        `${subDomain}${normalizeTitle(getCanonicalPageId(pageUuid, recordMap))}`,
         searchParams
       )
     }
