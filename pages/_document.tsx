@@ -6,7 +6,12 @@ export default class CustomDocument extends Document {
   render() {
     return (
       <Html lang='en'>
-        <Head />
+        <Head>
+          <meta 
+            httpEquiv="Content-Security-Policy" 
+            content="upgrade-insecure-requests" 
+          />
+        </Head>
 
         <body>
           <Main />
