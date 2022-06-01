@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: '/notion-blog',
+  basePath: '/',
   assetPrefix: (process.env.NODE_ENV === 'production' ? 'http://blog.singun11.wtf' : ''),
   exportPathMap: async function (
     defaultPathMap,
