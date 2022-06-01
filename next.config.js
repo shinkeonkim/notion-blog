@@ -15,7 +15,7 @@ const nextConfig = {
     loader: 'akamai',
     path: '/',
     domains: [
-      'www.singn11.wtf',
+      'blog.singn11.wtf',
       'singun11.notion.site'
     ]
   }

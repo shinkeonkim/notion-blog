@@ -2,7 +2,7 @@
   "name": "notion-blog",
   "version": "0.1.0",
   "private": false,
-  "homepage": "http://www.singun11.wtf/notion-blog",
+  "homepage": "http://blog.singun11.wtf",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
