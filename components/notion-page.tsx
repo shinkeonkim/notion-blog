@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useMemo } from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
@@ -8,6 +8,7 @@ import { NotionRenderer } from 'react-notion-x'
 import { ExtendedRecordMap } from 'notion-types'
 import { getPageTitle } from 'notion-utils'
 import { useRouter } from 'next/router'
+import { mapPageUrl } from '../utils/map-page-url.util'
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(async (m) => {
@@ -95,6 +96,14 @@ const NotionPage = ({
 
   const title = getPageTitle(recordMap);
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const siteMapPageUrl = useMemo(() => {
+    const params: any = {}
+
+    const searchParams = new URLSearchParams(params)
+    return mapPageUrl(recordMap, searchParams)
+  }, [recordMap])
+
   return (
     <>
       <Head>
@@ -107,6 +116,7 @@ const NotionPage = ({
         recordMap={recordMap}
         fullPage={true}
         darkMode={true}
+        mapPageUrl={siteMapPageUrl}
         rootDomain={rootDomain}
         rootPageId={rootPageId}
         components={{

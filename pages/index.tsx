@@ -4,9 +4,8 @@ import { ExtendedRecordMap } from 'notion-types'
 import NotionPage from '../components/notion-page';
 import * as notion from '../utils/notion.util';
 
-const NOTION_ROOT_PAGE_ID = process.env.NOTION_ROOT_PAGE_ID || "";
-
 import {
+  rootDomain,
   notionPageID,
   previewImagesEnabled
 } from '../utils/config.util'
@@ -27,7 +26,8 @@ export default function Home({ recordMap }: { recordMap : ExtendedRecordMap }) {
   return (
     <NotionPage
       recordMap={recordMap}
-      rootPageId={NOTION_ROOT_PAGE_ID}
+      rootPageId={notionPageID}
+      rootDomain={rootDomain}
       previewImagesEnabled={previewImagesEnabled}
     />
   )
