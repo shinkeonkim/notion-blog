@@ -13,7 +13,6 @@ notion-api를 이용한 커스텀 블로그 사이트
 
 ## TODO
 
-- [ ] gh-page가 아닌 vercel을 통해 배포하기
 - [ ] 한글/영어 title에 무관하게 작동되도록 하기
 - [ ] footer 적용
 - [ ] side table of contents 적요
