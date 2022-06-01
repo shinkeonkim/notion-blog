@@ -25,13 +25,10 @@ export const getStaticProps = async () => {
 
 export default function Home({ recordMap }: { recordMap : ExtendedRecordMap }) {
   return (
-    <div>
-      {NOTION_ROOT_PAGE_ID}
-      <NotionPage
-        recordMap={recordMap}
-        rootPageId={NOTION_ROOT_PAGE_ID}
-        previewImagesEnabled={previewImagesEnabled}
-      />
-    </div>
+    <NotionPage
+      recordMap={recordMap}
+      rootPageId={NOTION_ROOT_PAGE_ID}
+      previewImagesEnabled={previewImagesEnabled}
+    />
   )
 }

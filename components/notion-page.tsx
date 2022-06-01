@@ -2,6 +2,7 @@ import * as React from 'react';
 import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 
 import { NotionRenderer } from 'react-notion-x'
 import { ExtendedRecordMap } from 'notion-types'
@@ -109,6 +110,7 @@ const NotionPage = ({
         rootDomain={rootDomain}
         rootPageId={rootPageId}
         components={{
+          nextLink: Link,
           Code,
           Collection,
           nextImage: Image,
