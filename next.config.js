@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   basePath: '/notion-blog',
-  assetPrefix: (process.env.NODE_ENV === 'production' ? 'http://www.singun11.wtf/notion-blog' : ''),
+  assetPrefix: (process.env.NODE_ENV === 'production' ? 'http://blog.singun11.wtf' : ''),
   exportPathMap: async function (
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
