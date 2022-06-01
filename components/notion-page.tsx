@@ -77,10 +77,10 @@ const NotionPage = ({
   rootDomain,
   previewImagesEnabled,
   } : {
-  recordMap: ExtendedRecordMap
-  rootPageId?: string
-  rootDomain?: string
-  previewImagesEnabled?: boolean
+    recordMap: ExtendedRecordMap
+    rootPageId?: string
+    rootDomain?: string
+    previewImagesEnabled?: boolean
   }) => {
 
   const router = useRouter()

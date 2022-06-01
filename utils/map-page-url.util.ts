@@ -45,7 +45,5 @@ export const mapPageUrl =
   }
 
 function createUrl(path: string, searchParams: URLSearchParams) {
-  console.log(path);
-
   return [path, searchParams.toString()].filter(Boolean).join('?')
 }
